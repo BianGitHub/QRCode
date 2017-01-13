@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <SafariServices/SafariServices.h>
 
 @interface ViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 // 输入设备  摄像头
@@ -64,6 +65,22 @@
         
         NSLog(@"%@", obj.stringValue);
         
+        // 判断二维码是否为网页
+        if([obj.stringValue hasPrefix:@"http"])
+        {
+            // 创建内嵌的浏览器
+            SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString: obj.stringValue]];
+            //modal
+            [self presentViewController:safariVC animated:YES completion:nil];
+            
+        } else {
+            NSLog(@"%@", obj.stringValue);
+        }
+        // 停止会话
+        [self.session stopRunning];
+        // 移除预览视图
+        [self.previewLayer removeFromSuperlayer];
+        return;
         
     }
 }
