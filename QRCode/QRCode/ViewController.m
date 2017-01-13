@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <SafariServices/SafariServices.h>
+#import "QRCPreView.h"
 
 @interface ViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 // 输入设备  摄像头
@@ -18,7 +19,7 @@
 // 会话  管理输入和输出设备
 @property(nonatomic, strong) AVCaptureSession *session;
 // 预览视图  layer
-@property(nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property(nonatomic, strong) QRCPreView *preView;
 @end
 
 @implementation ViewController
@@ -46,11 +47,16 @@
     self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
     
     // 4. 预览视图layer
-    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    [self.view.layer addSublayer:self.previewLayer];
+//    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
+//    [self.view.layer addSublayer:self.previewLayer];
+    
+    QRCPreView *preView = [[QRCPreView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    preView.session = self.session;
+    [self.view addSubview:preView];
+    self.preView = preView;
     
     // 设置尺寸
-    self.previewLayer.frame = [UIScreen mainScreen].bounds;
+//    self.previewLayer.frame = [UIScreen mainScreen].bounds;
     
     // 开始会话
     [self.session startRunning];
@@ -79,7 +85,7 @@
         // 停止会话
         [self.session stopRunning];
         // 移除预览视图
-        [self.previewLayer removeFromSuperlayer];
+        [self.preView removeFromSuperview];
         return;
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1185FB1F1E28D3CC007CDE60 /* QRCPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1185FB1E1E28D3CC007CDE60 /* QRCPreView.m */; };
 		11EF18571E28A3CB008626AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EF18561E28A3CB008626AA /* main.m */; };
 		11EF185A1E28A3CB008626AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EF18591E28A3CB008626AA /* AppDelegate.m */; };
 		11EF185D1E28A3CB008626AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EF185C1E28A3CB008626AA /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1185FB1D1E28D3CC007CDE60 /* QRCPreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCPreView.h; sourceTree = "<group>"; };
+		1185FB1E1E28D3CC007CDE60 /* QRCPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCPreView.m; sourceTree = "<group>"; };
 		11EF18521E28A3CB008626AA /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EF18561E28A3CB008626AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11EF18581E28A3CB008626AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 				11EF18591E28A3CB008626AA /* AppDelegate.m */,
 				11EF185B1E28A3CB008626AA /* ViewController.h */,
 				11EF185C1E28A3CB008626AA /* ViewController.m */,
+				1185FB1D1E28D3CC007CDE60 /* QRCPreView.h */,
+				1185FB1E1E28D3CC007CDE60 /* QRCPreView.m */,
 				11EF185E1E28A3CB008626AA /* Main.storyboard */,
 				11EF18551E28A3CB008626AA /* Supporting Files */,
 			);
@@ -154,6 +159,7 @@
 				11EF185D1E28A3CB008626AA /* ViewController.m in Sources */,
 				11EF185A1E28A3CB008626AA /* AppDelegate.m in Sources */,
 				11EF18571E28A3CB008626AA /* main.m in Sources */,
+				1185FB1F1E28D3CC007CDE60 /* QRCPreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
